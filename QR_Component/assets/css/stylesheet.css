@@ -1,0 +1,65 @@
+/*
+Blake Lyons
+08/03/2023
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    background: #d5e1ef;
+    font-family: "Open Sans", sans-serif;
+    width: 100vw;
+    height: 100vh;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    line-height: 1.75rem;
+    font-size: 1.3rem;
+}
+
+p {
+    padding: 0 1rem;
+}
+
+.qr-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 18px;
+    padding: 0.875rem;
+    box-shadow: 0 0 50px rgba(137, 147, 158, 0.4);
+    width: 320px;
+    max-height: 500px;
+}
+
+.qr-container .qr-code {
+    width: 100%;
+}
+
+.qr-container .qr-code,
+.qr-container .qr-code img {
+    border-radius: 12px;
+}
+
+.qr-container .qr-text {
+    text-align: center;
+    font-size: 0.875rem;
+}
