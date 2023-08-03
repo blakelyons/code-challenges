@@ -12,8 +12,8 @@ body {
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    background: #d5e1ef;
-    font-family: "Open Sans", sans-serif;
+    background: hsl(212, 45%, 89%);
+    font-family: "Outfit", sans-serif;
     width: 100vw;
     height: 100vh;
     font-size: 16px;
@@ -27,14 +27,17 @@ img {
 }
 
 h1 {
-    font-family: "Roboto", sans-serif;
-    font-weight: 600;
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
     line-height: 1.75rem;
     font-size: 1.3rem;
+    color: hsl(218, 44%, 22%);
 }
 
 p {
     padding: 0 1rem;
+    font-weight: 400;
+    color: hsl(220, 15%, 55%);
 }
 
 .qr-container {
@@ -45,7 +48,7 @@ p {
     background: #fff;
     border-radius: 18px;
     padding: 0.875rem;
-    box-shadow: 0 0 50px rgba(137, 147, 158, 0.4);
+    box-shadow: 0 0 50px rhsl(220, 15%, 55%);
     width: 320px;
     max-height: 500px;
 }
