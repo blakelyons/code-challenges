@@ -98,7 +98,7 @@ onMounted(() => {
         <section class="time-tracking-dashboard__cards">
             <div :class="`card ${loading ? `loading` : ``}`" :id="item.title" v-for="(item, index) in data" :key="`item_${index}`">
                 <div class="card__background" :style="`background-color: ${item.themeColor}`">
-                    <img :src="`./src/assets/img/${item.icon}`" alt="Work" />
+                    <img :src="`./assets/img/${item.icon}`" alt="Work" />
                     <div class="card-peek-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                             <!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
