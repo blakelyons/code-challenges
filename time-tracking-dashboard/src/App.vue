@@ -26,7 +26,7 @@ const selectedTimeframe = ref("weekly");
 
 const loadTimeTrackingData = async () => {
     // GET The time tracking data
-    await fetch("./src/data/data.json")
+    await fetch("./data/data.json")
         .then((response) => {
             // Check if the request was successful
             if (!response.ok) {
