@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 -   Solution URL: [Add solution URL here](https://github.com/blakelyons/code-challenges/tree/time-tracking-dashboard/time-period-dashboard)
--   Live Site URL: [Add live site URL here](https://blakelyons.com/graphics/coding_challenges/time_dashboard/dist/index.html)
+-   Live Site URL: [Add live site URL here](https://code-challenges-time-tracking-dashboard.pages.dev/)
 
 ## My process
 
