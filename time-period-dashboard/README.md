@@ -1,52 +1,71 @@
-# time-period-dashboard
+# Frontend Mentor - Time tracking dashboard solution
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Recommended IDE Setup
+## Table of contents
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+-   [Overview](#overview)
+    -   [The challenge](#the-challenge)
+    -   [Screenshot](#screenshot)
+    -   [Links](#links)
+-   [My process](#my-process)
+    -   [Built with](#built-with)
+    -   [What I learned](#what-i-learned)
+    -   [Continued development](#continued-development)
+    -   [Useful resources](#useful-resources)
+-   [Author](#author)
+-   [Acknowledgments](#acknowledgments)
 
-## Type Support for `.vue` Imports in TS
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Overview
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+### The challenge
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+Users should be able to:
 
-## Customize configuration
+-   View the optimal layout for the site depending on their device's screen size
+-   See hover states for all interactive elements on the page
+-   Switch between viewing Daily, Weekly, and Monthly stats
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+### Screenshot
 
-## Project Setup
+![](./time-period-dashboard/screenshots/blake_lyons_time_tracking_dashboard.jpg)
 
-```sh
-npm install
-```
+### Links
 
-### Compile and Hot-Reload for Development
+-   Solution URL: [Add solution URL here](https://github.com/blakelyons/code-challenges/tree/time-tracking-dashboard/time-period-dashboard)
+-   Live Site URL: [Add live site URL here](https://blakelyons.com/graphics/coding_challenges/time_dashboard/dist/index.html)
 
-```sh
-npm run dev
-```
+## My process
 
-### Type-Check, Compile and Minify for Production
+### Built with
 
-```sh
-npm run build
-```
+-   Semantic HTML5 markup
+-   CSS custom properties
+-   Flexbox
+-   Mobile-first workflow
+-   [Vue 3](https://vuejs.org/) - Vue 3 Framework
+-   [Skeleton-Elements](https://skeleton-elements.nolimits4web.com/) - Skeleton Framework
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+### What I learned
 
-```sh
-npm run test:unit
-```
+I don't have a ton of experience creating and deloying Vue Apps because that infrastructure is usually already in place. I wanted to use this challenge to better familiarize myself with creating and deploying Vue 3 Apps.
 
-### Lint with [ESLint](https://eslint.org/)
+### Continued development
 
-```sh
-npm run lint
-```
+I'm not 100% confident in the deployment process so I plan to continue to learn more about deploying Vue 3 Apps from beginning to end.
+
+### Useful resources
+
+I don't have any useful resources to go along with this project.
+
+## Author
+
+-   Website - [Blake Lyons](https://www.blakelyons.com)
+-   Frontend Mentor - [@blakelyons](https://www.frontendmentor.io/profile/blakelyons)
+-   Twitter - [@blakelyons](https://www.twitter.com/blakelyons)
+
+## Acknowledgments
+
+n/a
