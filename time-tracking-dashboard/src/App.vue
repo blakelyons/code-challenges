@@ -67,11 +67,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <main class="time-tracking-dashboard">
-        <div class="image-reference">
-            <img src="" />
-        </div>
-
+    <div class="time-tracking-dashboard">
         <aside class="profile-and-control-panel">
             <div class="profile">
                 <div class="profile__image">
@@ -129,17 +125,15 @@ onMounted(() => {
                             >
                         </div>
                     </div>
-                    <footer class="card__footer">
+                    <div class="card__footer">
                         <div class="card__footer__previous-data">
                             <span :class="`card__footer-previous-period ${loading ? `skeleton skeleton-text skeleton-effect-wave` : ``}`">
                                 Last {{ selectedTimeframe }} - {{ item.timeframes[selectedTimeframe].previous }}hrs
                             </span>
                         </div>
-                    </footer>
+                    </div>
                 </div>
             </div>
         </section>
-    </main>
+    </div>
 </template>
-
-<style scoped></style>
