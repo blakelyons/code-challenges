@@ -20,6 +20,7 @@ interface DataObjects {
 const data = ref<DataObjects[]>([]);
 const dataLoaded = ref(false);
 const loading = ref(true);
+const hideh1 = ref(false);
 
 const timeframePeriods = ref(["daily", "weekly", "monthly"]);
 const selectedTimeframe = ref("weekly");
@@ -55,6 +56,7 @@ watch(
         loading.value = true;
         setTimeout(() => {
             loading.value = false;
+            hideh1.value = true;
         }, 1200);
     },
     {immediate: true}
@@ -68,7 +70,9 @@ onMounted(() => {
 
 <template>
     <div class="time-tracking-dashboard">
-        <aside class="profile-and-control-panel">
+        <h1 :class="hideh1 ? `loaded` : ``">Time Tracking Dashboard</h1>
+        <div class="time-tracking-dashboard__container">
+            <aside class="profile-and-control-panel">
             <header class="profile">
                 <div class="profile__image">
                     <img src="./assets/img/image-jeremy.png" alt="Jeremy Robson" />
@@ -135,5 +139,6 @@ onMounted(() => {
                 </div>
             </div>
         </section>
+        </div>
     </div>
 </template>

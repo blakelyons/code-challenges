@@ -106,3 +106,14 @@ img {
 .skeleton-text {
     border-radius: 0.375rem;
 }
+
+h1 {
+    margin-bottom: 2rem;
+    transition: var(--bounce-transition);
+}
+
+h1.loaded {
+    transform: translateY(100%);
+    opacity: 0;
+    visibility: hidden;
+}

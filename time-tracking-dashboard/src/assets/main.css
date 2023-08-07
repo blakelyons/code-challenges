@@ -1,7 +1,7 @@
 @import "./base.css";
 
 /* Component Styles */
-.time-tracking-dashboard {
+.time-tracking-dashboard__container {
     display: flex;
     flex-flow: row wrap;
     gap: 1.875rem 1.875rem;
@@ -12,7 +12,7 @@
 }
 
 @media screen and (min-width: 60em) {
-    .time-tracking-dashboard {
+    .time-tracking-dashboard__container {
         flex-flow: row nowrap;
     }
 }
@@ -223,7 +223,7 @@ section {
 @media screen and (min-width: 60em) {
     .card:hover .card__background,
     .card.loading .card__background {
-        top: 9.25rem;
+        top: 6.25rem;
     }
     .card:hover .card__background img,
     .card.loading .card__background img {
