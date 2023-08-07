@@ -69,7 +69,7 @@ onMounted(() => {
 <template>
     <div class="time-tracking-dashboard">
         <aside class="profile-and-control-panel">
-            <div class="profile">
+            <header class="profile">
                 <div class="profile__image">
                     <img src="./assets/img/image-jeremy.png" alt="Jeremy Robson" />
                 </div>
@@ -79,7 +79,7 @@ onMounted(() => {
                         <h2>{{ profileName }}</h2>
                     </div>
                 </div>
-            </div>
+            </header>
             <div :class="`time-period-toggle ${dataLoaded ? `loaded` : ``}`">
                 <ul>
                     <li v-for="(timeframe, index) in timeframePeriods" :key="`timeframe_${index}`">
