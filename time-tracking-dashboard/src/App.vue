@@ -92,7 +92,7 @@ onMounted(() => {
         </aside>
 
         <section class="time-tracking-dashboard__cards">
-            <div :class="`card ${loading ? `loading` : ``}`" :id="item.title" v-for="(item, index) in data" :key="`item_${index}`">
+            <div :class="`card ${loading ? `loading` : ``}`" v-for="(item, index) in data" :key="`item_${index}`">
                 <div class="card__background" :style="`background-color: ${item.themeColor}`">
                     <img :src="`./assets/img/${item.icon}`" alt="Work" />
                     <div class="card-peek-icon">
