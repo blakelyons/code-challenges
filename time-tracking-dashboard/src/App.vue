@@ -106,7 +106,7 @@ onMounted(() => {
                 </div>
                 <div class="card__content">
                     <header class="card__content__header">
-                        <div class="card__content__header__title">{{ item.title }}</div>
+                        <h3 class="card__content__header__title">{{ item.title }}</h3>
                         <a @click="openDetail(item.title)" class="card__content__header__more">
                             <svg width="25" height="5" xmlns="http://www.w3.org/2000/svg">
                                 <path

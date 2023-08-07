@@ -296,6 +296,11 @@ section {
     overflow: hidden;
 }
 
+.card__content__header__title {
+    font-size: 1.125rem;
+    font-weight: 400;
+}
+
 .card__content__header__more {
     cursor: pointer;
 }
