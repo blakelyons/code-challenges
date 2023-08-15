@@ -1,9 +1,39 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import { ref } from 'vue'
+
+const ccNumber = ref('0000 0000 0000 0000')
+
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+
+    
+  Jane Appleseed
+  00/00
+
+  000
+
+  Cardholder Name
+  e.g. Jane Appleseed
+
+  Card Number
+  e.g. 1234 5678 9123 0000
+
+  Exp. Date (MM/YY)
+  MM
+  YY
+
+  CVC
+  e.g. 123
+
+  Confirm
+
+  <!-- Completed state start -->
+
+  Thank you!
+  We've added your card details
+  Continue
+
   </main>
 </template>
