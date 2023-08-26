@@ -7,18 +7,23 @@ const creditCardsContainerLoaded = ref(false);
 const inputPlaceholders = ref(["e.g. Jane Appleseed", "e.g. 1234 5678 9123 0000", "MM", "YY", "e.g. 123"]); // name, cardNumber, expDate, expYear, cvc
 
 const ccName = ref("");
+const ccNamePlaceholder = ref("Jane Appleseed");
 const ccNameValid = ref(true);
 
 const ccNumber = ref("");
+const ccNumberPlaceholder = ref("0000000000000000");
 const ccNumberValid = ref(true);
 const ccNumberWrongFormat = ref(false);
 const ccNumberNotValidType = ref(true);
 
 const ccMonth = ref("");
+const ccMonthPlaceholder = ref("00");
 const ccYear = ref("");
+const ccYearPlaceholder = ref("00");
 const ccExpDateValid = ref(true);
 
 const ccCvc = ref("");
+const ccCvcPlaceholder = ref("123");
 const ccCvcValid = ref(true);
 
 const formIsValid = ref(false);
@@ -267,29 +272,32 @@ onMounted(() => {
 
 <template>
     <div class="cc-form-container">
+        <h1 style="position: absolute; top: 0; left: 0; opacity: 0">Frontend Mentor Interactive Credit Card Solution</h1>
         <div :class="`credit-cards-wrapper ${creditCardsContainerLoaded ? `loaded` : ``}`">
             <div class="credit-cards">
                 <div :class="`credit-cards__front ${ccAnimateFrontInView ? `animate-into-view` : ``}`">
-                    <img src="../assets/bg-card-front.png" />
+                    <img src="../assets/bg-card-front.png" alt="Credit Card Front" />
                     <div class="credit-card-front__circles">
                         <div class="white-circle white-circle--fill white-circle--large"></div>
                         <div class="white-circle white-circle--small white-circle--hollow"></div>
-                        <div class="credit-card-type">
-                            <h2>{{ creditCardType }}</h2>
-                        </div>
+                        <Transition name="fade">
+                            <div class="credit-card-type" v-if="creditCardType">
+                                <h2>{{ creditCardType }}</h2>
+                            </div>
+                        </Transition>
                     </div>
                     <div class="credit-cards__front--information">
                         <div class="cc-number">
                             <Transition name="fade">
-                                <span v-if="ccNumber">{{ ccNumber }}</span>
+                                <span v-if="ccNumber || ccNumberPlaceholder">{{ ccNumber ? ccNumber : ccNumberPlaceholder }}</span>
                             </Transition>
                         </div>
 
                         <div class="cc-name-and-exp-date">
                             <div class="cc-name">
                                 <Transition name="fade">
-                                    <span v-if="ccName">
-                                        {{ ccName }}
+                                    <span v-if="ccName || ccNamePlaceholder">
+                                        {{ ccName ? ccName : ccNamePlaceholder }}
                                     </span>
                                 </Transition>
                                 <span>&nbsp;</span>
@@ -297,9 +305,9 @@ onMounted(() => {
 
                             <div class="cc-exp-date">
                                 <Transition name="fade">
-                                    <div v-if="ccMonth || ccYear">
-                                        <span class="cc-exp-date__month">{{ ccMonth }}</span
-                                        >/<span class="cc-exp-date__year">{{ ccYear }}</span>
+                                    <div v-if="ccMonth || ccYear || ccMonthPlaceholder || ccYearPlaceholder">
+                                        <span class="cc-exp-date__month">{{ ccMonth ? ccMonth : ccMonthPlaceholder }}</span
+                                        >/<span class="cc-exp-date__year">{{ ccYear ? ccYear : ccYearPlaceholder }}</span>
                                     </div>
                                 </Transition>
                             </div>
@@ -307,11 +315,11 @@ onMounted(() => {
                     </div>
                 </div>
                 <div :class="`credit-cards__back ${ccAnimateBackInView ? `animate-into-view` : ``}`">
-                    <img src="../assets/bg-card-back.png" />
+                    <img src="../assets/bg-card-back.png" alt="Credit Card Back" />
                     <div class="cc-cvc-number">
                         <Transition name="fade">
-                            <span v-if="ccCvc">
-                                {{ ccCvc }}
+                            <span v-if="ccCvc || ccCvcPlaceholder">
+                                {{ ccCvc ? ccCvc : ccCvcPlaceholder }}
                             </span>
                         </Transition>
                     </div>
@@ -420,10 +428,10 @@ onMounted(() => {
                     <div class="grid-row">
                         <div class="grid-row__item">
                             <button :class="`button ${error ? `shake` : ``}`" type="submit" :disabled="error" @click="submitForm">
-                                <div class="pattern">
-                                    <div class="target inner"></div>
-                                </div>
-                                <div class="text">
+                                <span class="pattern">
+                                    <span class="target inner"></span>
+                                </span>
+                                <span class="text">
                                     <span v-text="error ? `Error!` : `Confirm `"></span>
                                     <span :class="`error-icon ${error ? `active` : ``}`" v-html="errorIcon" v-if="error"></span>
                                     <span
@@ -431,7 +439,7 @@ onMounted(() => {
                                         :class="`checkmark-icon ${animateButtonIcon ? `active` : ``}`"
                                         v-html="animateButtonIcon ? checkmarkIcon : ''"
                                     ></span>
-                                </div>
+                                </span>
                             </button>
                         </div>
                     </div>
@@ -456,13 +464,13 @@ onMounted(() => {
                     <p class="message">We've added your card details</p>
                     <p>
                         <button class="button" @click="resetForm">
-                            <div class="pattern">
-                                <div class="target inner"></div>
-                            </div>
-                            <div class="text">
+                            <span class="pattern">
+                                <span class="target inner"></span>
+                            </span>
+                            <span class="text">
                                 <span>Continue</span>
-                                <div class="arrow-icon" v-html="arrowIcon"></div>
-                            </div>
+                                <span class="arrow-icon" v-html="arrowIcon"></span>
+                            </span>
                         </button>
                     </p>
                 </div>

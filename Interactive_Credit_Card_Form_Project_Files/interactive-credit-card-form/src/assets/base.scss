@@ -115,7 +115,7 @@ p {
     &:hover .pattern {
         opacity: 1;
         visibility: visible;
-        span {
+        span[class*="-icon"] {
             transform: translateX(-0.25rem);
         }
     }
