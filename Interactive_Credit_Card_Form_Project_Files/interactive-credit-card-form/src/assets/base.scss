@@ -1,0 +1,272 @@
+/*
+### Primary
+
+- Linear gradient (active input border): hsl(249, 99%, 64%) to hsl(278, 94%, 30%)
+- Red (input errors): hsl(0, 100%, 66%)
+
+### Neutral
+
+- White: hsl(0, 0%, 100%)
+- Light grayish violet: hsl(270, 3%, 87%)
+- Dark grayish violet: hsl(279, 6%, 55%)
+- Very dark violet: hsl(278, 68%, 11%)
+/*
+
+/* semantic color variables for this project */
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+@import "./helpers.scss";
+
+:root {
+    --clr-black: hsl(0, 0%, 0%);
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-gray: hsl(0, 0%, 80%);
+    --clr-bg-light: var(--theme-light);
+    --clr-bg-dark: var(--theme-dark);
+
+    --clr-heading: var(--clr-very-dark-violet);
+    --clr-text: var(--clr-very-dark-violet);
+    --clr-error: hsl(0, 100%, 66%);
+    --clr-light-grayish-violet: hsl(270, 3%, 87%);
+    --clr-dark-grayish-violet: hsl(279, 6%, 55%);
+    --clr-very-dark-violet: hsl(278, 68%, 11%);
+    --clr-very-dark-violet-hover: hsl(278, 68%, 11%);
+
+    --clr-gradient: radial-gradient(circle, rgba(100, 72, 254, 1) 0%, rgba(33, 9, 47, 1) 150%);
+    --clr-light-purple: hsl(249, 99%, 64%);
+    --clr-light-purple-alt: hsl(278, 94%, 30%);
+
+    --clr-attribution-link: hsl(228, 45%, 44%);
+
+    --font-size-sm: 0.8rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xlg: 1.25rem;
+
+    @media screen and (max-width: 40em) {
+        --font-size-sm: 0.6rem;
+        --font-size-lg: 0.8rem;
+        --font-size-xlg: 1.125rem;
+    }
+
+    --x: 0;
+    --y: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    font-weight: 500;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+html {
+    font-size: 18px;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    // overflow: hidden;
+    color: var(--clr-text);
+    background: var(--clr-bg-light);
+    transition: color 0.5s, background-color 0.5s;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+    margin: 1rem 0;
+}
+
+.button {
+    -webkit-tap-highlight-color: transparent;
+    appearance: none;
+    border-radius: var(--border-radius);
+    border: 2px solid black;
+    border: 0;
+    color: black;
+    cursor: pointer;
+    outline: none;
+    //overflow: hidden;
+    padding: 0.75rem;
+    font-size: 1em;
+    position: relative;
+    color: var(--clr-white);
+    background: var(--clr-very-dark-violet);
+    width: 420px;
+
+    &[disabled] {
+        background: var(--clr-error);
+    }
+
+    &:hover .pattern {
+        opacity: 1;
+        visibility: visible;
+        span {
+            transform: translateX(-0.25rem);
+        }
+    }
+
+    span {
+        @include transition(var(--transition-duration));
+    }
+
+    .pattern {
+        background: var(--clr-very-dark-violet);
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        transition: all 0.2s ease-in-out;
+        visibility: hidden;
+        opacity: 0;
+        border-radius: var(--border-radius);
+    }
+
+    .text {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        .checkmark-icon,
+        .error-icon,
+        .arrow-icon {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+            margin-left: 0.25rem;
+            opacity: 0;
+            transform: translateX(-0.25rem);
+            @include transition(var(--transition-duration));
+
+            &.active {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .error-icon {
+            svg {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+
+        .checkmark-icon {
+            svg {
+                width: 1.1rem;
+                height: 1.1rem;
+            }
+        }
+
+        .arrow-icon {
+            opacity: 1;
+            margin-left: 0.5rem;
+            margin-top: 1px;
+            svg {
+                width: 1rem;
+                height: 1rem;
+            }
+        }
+    }
+
+    .target {
+        display: block;
+        position: relative;
+        background: var(--clr-gradient);
+        transform: translate(var(--x), var(--y));
+        width: 100%;
+        height: 100%;
+        border-radius: var(--border-radius);
+    }
+
+    &:hover {
+        .arrow-icon {
+            transform: translateX(0.25rem);
+        }
+    }
+
+    &:active {
+        opacity: 0.9;
+        transition: opacity 100ms;
+        transform: translateY(2px);
+        transition: all 0.1s ease-in-out;
+    }
+
+    &.shake {
+        animation: button-shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+        transform: translate3d(0, 0, 0);
+        perspective: 1000px;
+    }
+}
+
+@keyframes button-shake {
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+.grid,
+.grid-row {
+    display: grid;
+    gap: var(--grid-gap);
+    grid-template-columns: 1fr;
+
+    &.grid--no-gap,
+    .grid-row--no-gap {
+        gap: 0;
+    }
+
+    &.grid--two-column,
+    .grid-row--two-column {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+footer {
+    display: block;
+    position: fixed;
+    bottom: 1rem;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: --clr-attribution-link;
+}
+
+/* --- General & Layout Styles --- */

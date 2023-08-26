@@ -1,0 +1,4 @@
+@mixin transition($speed) {
+    transition: var(--default-transition);
+    transition-duration: $speed;
+}
